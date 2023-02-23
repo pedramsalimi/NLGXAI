@@ -3,7 +3,7 @@ This repository contains a taxonomy of counterfactual categories and information
 This taxonomy provides a comprehensive classification of features that can be used as a guideline for creating counterfactuals. In addition to the taxonomy, this repository also contains templates for generating natural language explanations based on the counterfactual categories. These templates provide a structured approach for generating coherent and understandable explanations, making it easier for users to understand the counterfactual scenarios. This information can be used as a reference by contributors who wish to add their own datasets to the repository, ensuring that the information is structured and consistent with the taxonomy and templates provided.
 
 Features
-├─ Immutable
+├-- Immutable
 │  ├─ Restricted Immutable
 │  │  ├─ Race
 │  │  ├─ Ethnicity
@@ -22,7 +22,6 @@ Features
       ├─ Credit score
       ├─ Working hours per week
       └─ ...
-
 
 To ensure well-structured templates for counterfactual explanations, a user study was conducted to analyze the key ideas in generating natural language counterfactual explanations. Four categories of information were extracted from the study, including the use of both previous and counterfactual feature values in the explanation, only mentioning counterfactual values, using a wide variety of changing words, and the use of ordinal adverbs or bullet-pointing for ease of understanding. Based on these four categories, four templates were created that can incorporate any of the aforementioned characteristics.
 
