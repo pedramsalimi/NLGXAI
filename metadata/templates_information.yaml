@@ -1,0 +1,43 @@
+---
+templates:
+  paragraph-based-explanations:
+    mutable-directly:
+      both-previous-and-counterfactual-values: "{CHANGING_TERM} {FEATURE} from {PREVIOUS_VALUE} to {COUNTERFACTUAL_VALUE}"
+      only-counterfactual-values: "{CHANGING_TERM} {FEATURE} to {COUNTERFACTUAL_VALUE}"
+    mutable-indirectly:
+      both-previous-and-counterfactual-values: "take steps to {CHANGING_TERM} {FEATURE} from {PREVIOUS_VALUE} to {COUNTERFACTUAL_VALUE}"
+      only-counterfactual-values: "take steps to {CHANGING_TERM} {FEATURE} to {COUNTERFACTUAL_VALUE}"
+    immutable-restricted: "{FEATURE} {COUNTERFACTUAL_VALUE} has a higher chance to {DESIRED_STATEMENT} compared to {FEATURE} {PREVIOUS_VALUE}"
+    immutable-regular: "Your {FEATURE} has a contribution to {UNDESIRED_CLASS}"
+  ordinal-based-explanations:
+    mutable-directly:
+      both-previous-and-counterfactual-values: "\n{INDEX}), {CHANGING_TERM} {FEATURE} from {PREVIOUS_VALUE} to {COUNTERFACTUAL_VALUE}"
+      only-counterfactual-values: "\n{INDEX}), {CHANGING_TERM} {FEATURE} to {COUNTERFACTUAL_VALUE}"
+    mutable-indirectly:
+      both-previous-and-counterfactual-values: "\n{INDEX}), take steps to {CHANGING_TERM} {FEATURE} from {PREVIOUS_VALUE} to {COUNTERFACTUAL_VALUE}"
+      only-counterfactual-values: "\n{INDEX}), take steps to {CHANGING_TERM} {FEATURE} to {COUNTERFACTUAL_VALUE}"
+    immutable-restricted: "\nMoreover, {FEATURE} {COUNTERFACTUAL_VALUE} has a higher chance to {DESIRED_STATEMENT} compared to {FEATURE} {PREVIOUS_VALUE}"
+    immutable-regular: "\nFurthermore, Your {FEATURE} has a contribution to {UNDESIRED_CLASS}"
+    
+prologue:
+  - "A list of strings that introduces the explanation and provides information about the number of features that are actionable and can be changed by the user."
+starting_point:
+  - "A list of strings that presents the initial state and conditions of the dataset. For example, in a loan application dataset, this could be a sentence such as 'Your loan would be approved if...'."
+epilogue:
+  - "A list of strings that concludes the explanation with domain-specific statements. For instance, in a health domain dataset related to heart disease, the epilogue could be 'Stay healthy!'."
+target_class:
+  - "A string that represents the class that the user wants to achieve or reach with their actions. In a loan application dataset, this could be 'Approved'."
+undesired_class:
+  - "A string that represents the class that the user wants to avoid or prevent. For example, in a loan application dataset, this could be 'Rejected'."
+desired_class:
+  - "A string that represents the desired outcome of the user's actions. For instance, in a heart disease dataset, this could be 'Having a healthy heart'."
+con_feats:
+  - "A list of strings that represents the continuous features in the dataset that are actionable and can be changed by the user."
+cat_feats:
+  - "A list of strings that represents the categorical features in the dataset that are actionable and can be changed by the user."
+feature_categories:
+  - "A dictionary that maps each feature to its category in the actionable taxonomy (direct, indirect, restricted, or regular)."
+undesired_statement:
+  - "A string that represents the undesirable state that the user wants to avoid. In a heart disease dataset, this could be 'Having a heart problem'."
+desired_statement:
+  - "A string that represents the desirable state that the user wants to achieve. For example, in a heart disease dataset, this could be 'Having a healthy heart'."
