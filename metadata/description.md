@@ -1,28 +1,28 @@
 This repository contains a taxonomy of counterfactual categories and information about the associated templates. The taxonomy classifies features into two broad categories: Immutable and Mutable, based on their actionability in a counterfactual scenario. Mutable features are further divided into two subcategories: Mutable directly and Mutable indirectly, depending on whether or not the user can directly change the feature. Immutable features are also classified into two subcategories: Restricted Immutable and Immutable regular. Restricted Immutable features are those that cannot be suggested for change, as they may be offensive or sensitive, such as race. Immutable regular features refer to other regular immutable features, such as the number of accounts a user has opened in the previous year.
 
 This taxonomy provides a comprehensive classification of features that can be used as a guideline for creating counterfactuals. In addition to the taxonomy, this repository also contains templates for generating natural language explanations based on the counterfactual categories. These templates provide a structured approach for generating coherent and understandable explanations, making it easier for users to understand the counterfactual scenarios. This information can be used as a reference by contributors who wish to add their own datasets to the repository, ensuring that the information is structured and consistent with the taxonomy and templates provided.
-
+```bash
 Features
-|-- Immutable
-|   |-- Restricted Immutable
-|   |   |-- Race
-|   |   |-- Ethnicity
-|   |   `-- ...
-|   `-- Immutable regular
-|       |-- Age
-|       |-- Education level
-|       |-- Number of accounts opened in the previous year
-|       `-- ...
-`-- Mutable
-    |-- Mutable directly
-    |   |-- Loan amount
-    |   |-- Interest rate
-    |   `-- ...
-    `-- Mutable indirectly
-        |-- Credit score
-        |-- Working hours per week
-        `-- ...
-
+├─ Immutable
+│  ├─ Restricted Immutable
+│  │  ├─ Race
+│  │  ├─ Ethnicity
+│  │  └─ ...
+│  └─ Immutable regular
+│     ├─ Age
+│     ├─ Education level
+│     ├─ Number of accounts opened in the previous year
+│     └─ ...
+└─ Mutable
+   ├─ Mutable directly
+   │  ├─ Loan amount
+   │  ├─ Interest rate
+   │  └─ ...
+   └─ Mutable indirectly
+      ├─ Credit score
+      ├─ Working hours per week
+      └─ ...
+```
 To ensure well-structured templates for counterfactual explanations, a user study was conducted to analyze the key ideas in generating natural language counterfactual explanations. Four categories of information were extracted from the study, including the use of both previous and counterfactual feature values in the explanation, only mentioning counterfactual values, using a wide variety of changing words, and the use of ordinal adverbs or bullet-pointing for ease of understanding. Based on these four categories, four templates were created that can incorporate any of the aforementioned characteristics.
 
 The templates can be categorized into two that use paragraph-like explanations and two that use ordinal adverbs. Each of the templates is able to handle the taxonomy of actionable and immutable features, as well as using a diverse range of words for increasing variability in the explanation. Additionally, each template starts with an initial sentence (prologue) that mentions the number of actionable features that the user can change, and ends with a domain-specific epilogue. For instance, in the health domain, the template might end with "Stay healthy!" while in the financial domain, the template might conclude with "Good luck with your loan!".
@@ -40,7 +40,8 @@ So now details about templates:
 	4. Immutable regular:
 		Your {FEATURE} has a contribution to {UNDESIRED_CLASS}
 
-Paragraph-based explanations
+Paragraph-based explanations:
+```bash
 ├── Mutable directly
 │   ├── Both previous and counterfactual values
 │   │   ├── {CHANGING_TERM} + {FEATURE} + from {PREVIOUS_VALUE} value to {COUNTERFACTUAL_VALUE}
@@ -59,8 +60,11 @@ Paragraph-based explanations
 │   └── {FEATURE} + {COUNTERFACTUAL_VALUE} + has a higher chance to desired statement compared to {FEATURE} {PREVIOUS_VALUE}
 └── Immutable regular
     └── Your {FEATURE} has a contribution to {UNDESIRED_CLASS}
+```
 
 Ordinal-based explanations
+
+```bash
 ├── Mutable directly
 │   ├── Both previous and counterfactual values
 │   │   ├── \n{INDEX}), {CHANGING_TERM} + {FEATURE} + from {PREVIOUS_VALUE} value to {COUNTERFACTUAL_VALUE}
@@ -79,6 +83,7 @@ Ordinal-based explanations
 │   └── \nMoreover, {FEATURE} + {COUNTERFACTUAL_VALUE} + has a higher chance to desired statement compared to {FEATURE} {PREVIOUS_VALUE}
 └── Immutable regular
     └── \nFurthermore, Your {FEATURE} has a contribution to {UNDESIRED_CLASS}
+```
 For each dataset, we provide the following information to ensure well-structured templates:
 
 Prologue: A list of strings that introduces the explanation and provides information about the number of features that are actionable and can be changed by the user.
