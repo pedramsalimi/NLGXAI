@@ -1,0 +1,25 @@
+Name: Counterfactual Taxonomy
+Description: This repository contains a taxonomy of counterfactual categories and information about the associated templates. The taxonomy classifies features into two broad categories: Immutable and Mutable, based on their actionability in a counterfactual scenario. Mutable features are further divided into two subcategories: Mutable directly and Mutable indirectly, depending on whether or not the user can directly change the feature. Immutable features are also classified into two subcategories: Restricted Immutable and Immutable regular. Restricted Immutable features are those that cannot be suggested for change, as they may be offensive or sensitive, such as race. Immutable regular features refer to other regular immutable features, such as the number of accounts a user has opened in the previous year.
+ 
+Purpose: This taxonomy provides a comprehensive classification of features that can be used as a guideline for creating counterfactuals. In addition to the taxonomy, this repository also contains templates for generating natural language explanations based on the counterfactual categories. These templates provide a structured approach for generating coherent and understandable explanations, making it easier for users to understand the counterfactual scenarios. This information can be used as a reference by contributors who wish to add their own datasets to the repository, ensuring that the information is structured and consistent with the taxonomy and templates provided.
+
+Features:
+  - Immutable:
+      - Restricted Immutable:
+          - Race
+          - Ethnicity
+          - ...
+      - Immutable regular:
+          - Age
+          - Education level
+          - Number of accounts opened in the previous year
+          - ...
+  - Mutable:
+      - Mutable directly:
+          - Loan amount
+          - Interest rate
+          - ...
+      - Mutable indirectly:
+          - Credit score
+          - Working hours per week
+          - ...
