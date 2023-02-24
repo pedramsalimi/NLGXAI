@@ -86,40 +86,40 @@ Ordinal-based explanations
 ```
 For each dataset, we provide the following information to ensure well-structured templates:
 
-Prologue: A list of strings that introduces the explanation and provides information about the number of features that are actionable and can be changed by the user.
+**Prologue:** A list of strings that introduces the explanation and provides information about the number of features that are actionable and can be changed by the user.
 
-Starting point: A list of strings that presents the initial state and conditions of the dataset. For example, in a loan application dataset, this could be a sentence such as "Your loan would be approved if...".
+**Starting point:** A list of strings that presents the initial state and conditions of the dataset. For example, in a loan application dataset, this could be a sentence such as "Your loan would be approved if...".
 
-Epilogue: A list of strings that concludes the explanation with domain-specific statements. For instance, in a health domain dataset related to heart disease, the epilogue could be "Stay healthy!".
+**Epilogue:** A list of strings that concludes the explanation with domain-specific statements. For instance, in a health domain dataset related to heart disease, the epilogue could be "Stay healthy!".
 
-Target class: A string that represents the class that the user wants to achieve or reach with their actions. In a loan application dataset, this could be "Approved".
+**Target class:** A string that represents the class that the user wants to achieve or reach with their actions. In a loan application dataset, this could be "Approved".
 
-Undesired class: A string that represents the class that the user wants to avoid or prevent. For example, in a loan application dataset, this could be 'Rejected'.
+**Undesired class:** A string that represents the class that the user wants to avoid or prevent. For example, in a loan application dataset, this could be 'Rejected'.
 
-Desired class: A string that represents the desired outcome of the user's actions. For instance, in a heart disease dataset, this could be 'Having a healthy heart'.
+**Desired class:** A string that represents the desired outcome of the user's actions. For instance, in a heart disease dataset, this could be 'Having a healthy heart'.
 
-Con_feats: A list of strings that represents the continuous features in the dataset that are actionable and can be changed by the user.
+**Con_feats:** A list of strings that represents the continuous features in the dataset that are actionable and can be changed by the user.
 
-Cat_feats: A list of strings that represents the categorical features in the dataset that are actionable and can be changed by the user.
+**Cat_feats:** A list of strings that represents the categorical features in the dataset that are actionable and can be changed by the user.
 
-Feature_categories: A dictionary that maps each feature to its category in the actionable taxonomy (direct, indirect, restricted, or regular).
+**Feature_categories:** A dictionary that maps each feature to its category in the actionable taxonomy (direct, indirect, restricted, or regular).
 
-Undesired statement: A string that represents the undesirable state that the user wants to avoid. In a heart disease dataset, this could be "Having a heart problem".
+**Undesired statement:** A string that represents the undesirable state that the user wants to avoid. In a heart disease dataset, this could be "Having a heart problem".
 
-Desired statement: A string that represents the desirable state that the user wants to achieve. For example, in a heart disease dataset, this could be "Having a healthy heart".
+**Desired statement:** A string that represents the desirable state that the user wants to achieve. For example, in a heart disease dataset, this could be "Having a healthy heart".
 
 The templates are categorized as paragraph-based or ordinal-adverb-based explanations. For paragraph-based explanations, we have four templates that cover all possible combinations of previous and counterfactual values for mutable features, as well as the two categories of immutable features. For ordinal-adverb-based explanations, we also have four templates that can handle the same feature taxonomy and changing word diversity.
 
 An output example:
 
-In order to prevent you from heart problems you would need to change 5 attributes.
-You would not get heart problem if you, 
-1), increase cp to 2.0. 
-2), take steps to lower trestbps to 108.0 and, 
-3), lower chol to 243.0. 
-4), lower thalach to 152.0. 
-5), decrease oldpeak to 0.0. 
-Furthermore, Your age has a contribution to have a heart problem. 
-Moreover, sex Male has a higher chance to  have a healthy heart compared to sex Female and, Take care!
-
+In order to prevent you from heart problems you would need to change 5 attributes.  
+You would not get heart problem if you,  
+1), increase cp to 2.0.  
+2), take steps to lower trestbps to 108.0 and,  
+3), lower chol to 243.0.  
+4), lower thalach to 152.0.  
+5), decrease oldpeak to 0.0.  
+Furthermore, Your age has a contribution to have a heart problem.  
+Moreover, sex Male has a higher chance to  have a healthy heart compared to sex Female and, Take care!  
+  
 We hope that this information will be helpful for users who wish to contribute datasets and work with our code.
