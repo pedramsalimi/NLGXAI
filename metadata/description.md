@@ -31,7 +31,7 @@ The templates can be categorized into two that use paragraph-like explanations a
 
 ## Templates' details:
 
-###Paragraph-based explanations:
+### Paragraph-based explanations:
 ```bash
 ├── Mutable directly
 │   ├── Both previous and counterfactual values
@@ -53,7 +53,7 @@ The templates can be categorized into two that use paragraph-like explanations a
     └── Your {FEATURE} has a contribution to {UNDESIRED_CLASS}
 ```
 
-###Ordinal-based explanations
+### Ordinal-based explanations
 
 ```bash
 ├── Mutable directly
