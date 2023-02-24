@@ -103,3 +103,22 @@ if __name__ == "__main__":
       starting,
       ending,
   )
+    
+"""
+Output Example:
+
+100%|██████████| 1/1 [00:01<00:00,  1.09s/it]
+ ********* COUNTERFACTUAL EXPLANATION ********* 
+
+In order to prevent you from heart problems you would need to change 5 attributes.
+You would not have heart disease if you, 
+1), take steps to reduce trestbps to 94.0 and, 
+2), increase chol from 248 to 471.0. 
+3), raise thalach from 122 to 132.0. 
+4), increase oldpeak from 1.0 to 2.0. 
+5), raise ca from 0 to 1.0. 
+Furthermore, Your age has a contribution to have a heart problem. 
+Moreover, sex Male has a higher chance to  have a healthy heart compared to sex Female and, stay safe!
+"""
+
+
