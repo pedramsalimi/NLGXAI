@@ -112,7 +112,7 @@ The templates are categorized as paragraph-based or ordinal-adverb-based explana
 
 An output example:
 
-In order to prevent you from heart problems you would need to change 5 attributes.  
+_In order to prevent you from heart problems you would need to change 5 attributes.  
 You would not get heart problem if you,  
 1), increase cp to 2.0.  
 2), take steps to lower trestbps to 108.0 and,  
@@ -120,6 +120,6 @@ You would not get heart problem if you,
 4), lower thalach to 152.0.  
 5), decrease oldpeak to 0.0.  
 Furthermore, Your age has a contribution to have a heart problem.  
-Moreover, sex Male has a higher chance to  have a healthy heart compared to sex Female and, Take care!  
+Moreover, sex Male has a higher chance to  have a healthy heart compared to sex Female and, Take care! _ 
   
 We hope that this information will be helpful for users who wish to contribute datasets and work with our code.
