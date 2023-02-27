@@ -42,16 +42,12 @@ The templates can be categorized into two that use paragraph-like explanations a
 ├── Mutable directly
 │   ├── Both previous and counterfactual values
 │   │   ├── {CHANGING_TERM} + {FEATURE} + from {PREVIOUS_VALUE} value to {COUNTERFACTUAL_VALUE}
-│   │   └── {CHANGING_TERM} + {FEATURE} + to counterfactual value
 │   └── Only counterfactual values
-│       ├── {CHANGING_TERM} + {FEATURE} + from {PREVIOUS_VALUE} value to {COUNTERFACTUAL_VALUE}
 │       └── {CHANGING_TERM} + {FEATURE} + to counterfactual value
 ├── Mutable indirectly
 │   ├── Both previous and counterfactual values
 │   │   ├── Take steps to {CHANGING_TERM} + {FEATURE} + from {PREVIOUS_VALUE} value to {COUNTERFACTUAL_VALUE}
-│   │   └── Take steps to {CHANGING_TERM} + {FEATURE} + to counterfactual value
 │   └── Only counterfactual values
-│       ├── Take steps to {CHANGING_TERM} + {FEATURE} + from {PREVIOUS_VALUE} value to {COUNTERFACTUAL_VALUE}
 │       └── Take steps to {CHANGING_TERM} + {FEATURE} + to {COUNTERFACTUAL_VALUE}
 ├── Immutable restricted
 │   └── {FEATURE} + {COUNTERFACTUAL_VALUE} + has a higher chance to desired statement compared to {FEATURE} {PREVIOUS_VALUE}
@@ -64,17 +60,13 @@ The templates can be categorized into two that use paragraph-like explanations a
 ```bash
 ├── Mutable directly
 │   ├── Both previous and counterfactual values
-│   │   ├── \n{INDEX}), {CHANGING_TERM} + {FEATURE} + from {PREVIOUS_VALUE} value to {COUNTERFACTUAL_VALUE}
-│   │   └── \n{INDEX}), {CHANGING_TERM} + {FEATURE} + to counterfactual value
+│   │   └── \n{INDEX}), {CHANGING_TERM} + {FEATURE} + from {PREVIOUS_VALUE} value to {COUNTERFACTUAL_VALUE}
 │   └── Only counterfactual values
-│       ├── \n{INDEX}), {CHANGING_TERM} + {FEATURE} + from {PREVIOUS_VALUE} value to {COUNTERFACTUAL_VALUE}
 │       └── \n{INDEX}), {CHANGING_TERM} + {FEATURE} + to counterfactual value
 ├── Mutable indirectly
 │   ├── Both previous and counterfactual values
-│   │   ├── \n{INDEX}), Take steps to {CHANGING_TERM} + {FEATURE} + from {PREVIOUS_VALUE} value to {COUNTERFACTUAL_VALUE}
-│   │   └── \n{INDEX}), Take steps to {CHANGING_TERM} + {FEATURE} + to counterfactual value
+│   │   └── \n{INDEX}), Take steps to {CHANGING_TERM} + {FEATURE} + from {PREVIOUS_VALUE} value to {COUNTERFACTUAL_VALUE}
 │   └── Only counterfactual values
-│       ├── \n{INDEX}), Take steps to {CHANGING_TERM} + {FEATURE} + from {PREVIOUS_VALUE} value to {COUNTERFACTUAL_VALUE}
 │       └── \n{INDEX}), Take steps to {CHANGING_TERM} + {FEATURE} + to {COUNTERFACTUAL_VALUE}
 ├── Immutable restricted
 │   └── \nMoreover, {FEATURE} + {COUNTERFACTUAL_VALUE} + has a higher chance to desired statement compared to {FEATURE} {PREVIOUS_VALUE}
