@@ -9,17 +9,17 @@ Features
 │  │  ├─ Race
 │  │  ├─ Ethnicity
 │  │  └─ ...
-│  └─ regular Immutable
+│  └─ Regular Immutable
 │     ├─ Age
 │     ├─ Education level
 │     ├─ Number of accounts opened in the previous year
 │     └─ ...
 └─ Mutable
-   ├─ Mutable directly
+   ├─ Directly Mutable 
    │  ├─ Loan amount
    │  ├─ Interest rate
    │  └─ ...
-   └─ Mutable indirectly
+   └─ Indirectly Mutable 
       ├─ Credit score
       ├─ Working hours per week
       └─ ...
