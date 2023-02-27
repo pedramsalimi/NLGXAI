@@ -9,7 +9,7 @@ Features
 │  │  ├─ Race
 │  │  ├─ Ethnicity
 │  │  └─ ...
-│  └─ Immutable regular
+│  └─ regular Immutable
 │     ├─ Age
 │     ├─ Education level
 │     ├─ Number of accounts opened in the previous year
