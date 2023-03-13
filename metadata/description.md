@@ -43,7 +43,7 @@ The templates can be categorized into two that use paragraph-like explanations a
 │   ├── Both previous and counterfactual values
 │   │   ├── {CHANGING_TERM} + {FEATURE} + from {PREVIOUS_VALUE} value to {COUNTERFACTUAL_VALUE}
 │   └── Only counterfactual values
-│       └── {CHANGING_TERM} + {FEATURE} + to counterfactual value
+│       └── {CHANGING_TERM} + {FEATURE} + to {COUNTERFACTUAL_VALUE}
 ├── Mutable indirectly
 │   ├── Both previous and counterfactual values
 │   │   ├── Take steps to {CHANGING_TERM} + {FEATURE} + from {PREVIOUS_VALUE} value to {COUNTERFACTUAL_VALUE}
