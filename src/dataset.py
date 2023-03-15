@@ -41,6 +41,7 @@ def create_dataset(
                               max_CF=max_CF,
                               outcome_name=target_name,
                               current_class=current_class,
+                              feature_categories=feature_categories,
                               output_path=output_path)
   print("Tabular CF dataset generation just finished...")
   print("Start generating textual explanations...")
