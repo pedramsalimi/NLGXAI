@@ -2,7 +2,6 @@ import random
 import torch
 import dice_ml
 from dice_ml import Dice
-from sklearn.datasets import load_iris, fetch_california_housing
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler, OneHotEncoder
 from sklearn.model_selection import train_test_split
@@ -77,6 +76,7 @@ def create_tabular_CF(dataset,
                       max_CF,
                       outcome_name,
                       current_class,
+                      feature_categories,
                       output_path):
   
   queries = dataset[dataset[outcome_name]==current_class]
@@ -87,28 +87,43 @@ def create_tabular_CF(dataset,
   for x in queries.T:
     query_instance = pd.DataFrame(queries.iloc[x]).T
     dice_exp = exp_genetic.generate_counterfactuals(query_instance, total_CFs=max_CF, desired_class="opposite")
-    dice_exp.cf_examples_list[0].final_cfs_df.to_csv(path_or_buf='counterfactuals.csv', index=False)
+    dice_exp.cf_examples_list[0].final_cfs_df.to_csv(path_or_buf=output_path, index=False)
     cfs = pd.read_csv(output_path)
 
     sample_dic = {}
     dic = {}
+    mutable_features = []
+    for i in feature_categories:
+      if feature_categories[i]=="indirect" or feature_categories[i]=="direct":
+        mutable_features.append(i)
+
+    mutables_idx = {}
     for j in cfs.T:
       max = 0
+      mutables = 0
       for i in query_instance.columns:
         if query_instance[i].item() != cfs.iloc[j][i]:
+          if query_instance[i].name in mutable_features:
+            mutables += 1
           max += 1
-      dic[j] = max
+        dic[j] = max
+      mutables_idx[j] = mutables
+    max_mutables = np.max(list(mutables_idx.values()))
 
-    cf = cfs.iloc[np.argmin(dic)]
+    if max_mutables < 3:
+      cf = cfs.iloc[np.argmax(list(dic.values()))]
+    else:
+      cf = cfs.iloc[np.argmin(list(dic.values()))]
     feats = []
     for i in query_instance.columns:
       if query_instance[i].item() != cf[i]:
         feats.append(i)
-    
+
     cf = pd.DataFrame(cf).T
     sample_dic["query"] = query_instance
     sample_dic["counter"] = cf
     sample_dic["diff"] = feats
+
 
     total.append(sample_dic)
     if x == samples_limit:
