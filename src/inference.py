@@ -20,14 +20,14 @@ def inference(
     starting,
     ending,
 ):
-  exp_genetic = CF_Generator(dataset,
+  exp_model = CF_Generator(dataset,
                               target_name,
                               categorical_features=cat_feats,
                               continuous_features=con_feats,
                               numeric_only=numeric_only)
 
   dataset = create_tabular_CF(dataset,
-                              exp_genetic,
+                              exp_model,
                               samples_limit=0, # 1000
                               max_CF=max_CF,
                               outcome_name=target_name,
