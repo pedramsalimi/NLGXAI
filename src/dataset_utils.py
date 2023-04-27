@@ -12,7 +12,10 @@ import numpy as np
 from dice_ml.utils import helpers 
 from sklearn.model_selection import train_test_split
 
-
+"""
+For using any other explainers please override the CF_Generator as well as providing generate_counterfactuals
+"""
+# DICE explainer example:
 def CF_Generator(dataset,
                  target_name,
                  categorical_features=None,
@@ -70,8 +73,15 @@ def CF_Generator(dataset,
   exp_genetic = Dice(d,m, method="genetic")
   return exp_genetic
 
+def cfgen(query):
+  """
+  input: query
+  output: dataframe of generated counterfactuals
+  """
+  pass
+
 def create_tabular_CF(dataset,
-                      exp_genetic,
+                      exp_model,
                       samples_limit,
                       max_CF,
                       outcome_name,
@@ -86,9 +96,12 @@ def create_tabular_CF(dataset,
   total = []
   for x in queries.T:
     query_instance = pd.DataFrame(queries.iloc[x]).T
-    dice_exp = exp_genetic.generate_counterfactuals(query_instance, total_CFs=max_CF, desired_class="opposite")
-    dice_exp.cf_examples_list[0].final_cfs_df.to_csv(path_or_buf=output_path, index=False)
+ 
+    # *************** alternatively modify cfgen function: ***************
+    exp = exp_model.generate_counterfactuals(query_instance, total_CFs=max_CF, desired_class="opposite")
+    exp.cf_examples_list[0].final_cfs_df.to_csv(path_or_buf=output_path, index=False)
     cfs = pd.read_csv(output_path)
+    # ********************************************************************
 
     sample_dic = {}
     dic = {}
