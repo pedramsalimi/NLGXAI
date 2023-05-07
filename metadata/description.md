@@ -29,6 +29,34 @@ Feature Actionability Taxonomy
      but cannot be directly modified itself
      Example: Blood Pressure in Diabetes dataset
 ```
+
+\begin{figure}[h]
+\renewcommand\DTstyle{\rmfamily}
+
+\dirtree{%
+ .1 \textbf{Feature Actionability Taxonomy}.
+ .2 \textbf{Immutable}.
+ .3 \textit{Definition}: Incapable of being changed or modified.
+ .3 \textbf{Immutable Sensitive (I.S.)}.
+ .4 \textit{Definition}: A feature whose value cannot be modified, and should (normally) not be suggested as changeable as this may cause offense to the recipient. 
+ .4 \textit{Example}: race/ethnicity in Student dataset.
+ .3 \textbf{Immutable Non-sensitive (I.NS.)}.
+ .4 \textit{Definition}: A feature whose value cannot be modified by any action the recipient can take.
+ .4 \textit{Example}: age band in OULAD dataset.
+ .2 \textbf{Mutable}.
+ .3 \textit{Definition}: A feature whose value can be changed or altered, either directly or through specific steps.
+ .3 \textbf{Mutable Directly (M.D.)}.
+ .4 \textit{Definition}: A feature whose value recipient can modify directly by the recipient through their actions with certainty and without any constraints.
+ .4 \textit{Example}: loan amount in Loan Approval dataset.
+ .3 \textbf{Mutable Indirectly (M.I.)}.
+ .4 \textit{Definition}: A feature whose value changes as a consequence of one or more actions taken by the recipient but cannot be directly modified itself.
+ .4 \textit{Example}: Blood Pressure in Diabetes dataset.
+}
+    \caption{The Feature Actionability Taxonomy (FAT).}
+    \label{fig:taxonomy}
+
+\end{figure}
+
 # Template-based Text Generation
  To ensure well-structured templates for counterfactual explanations, a user study was conducted to analyze the key ideas in generating natural language counterfactual explanations. Four categories of information were extracted from the study, including the use of both previous and counterfactual feature values in the explanation, only mentioning counterfactual values, using a wide variety of changing words, and the use of ordinal adverbs or bullet-pointing for ease of understanding. Based on these four categories, four templates were created that can incorporate any of the aforementioned characteristics.
 The creation of our templates involved three stages: macroplanning, microplanning, and surface realization.  
