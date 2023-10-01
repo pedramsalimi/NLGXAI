@@ -5,7 +5,7 @@ This repository contains the implementation and resources for our research on co
 # Main Contributions
 our main contribution lies in introducing a template-based natural language generation method tailored for sentence-level counterfactual explanations. By integrating a taxonomy with feature attribution weights, we've enabled the selection of NLG templates compatible with explainers like DICE, NICE, and DisCERN.​
 
-📄 Paper: https://rgu-repository.worktribe.com/output/2015280
+📄 Paper: [Link for the paper](https://rgu-repository.worktribe.com/output/2015280)
 🎥 Video Presentation: [Watch on YouTube](https://youtu.be/7Ti2354ohkk)
 
 # Citation:
