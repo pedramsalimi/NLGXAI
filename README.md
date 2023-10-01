@@ -1,6 +1,9 @@
 # Towards feasible counterfactual explanations: a taxonomy guided template-based NLG method
 # Overview
-This repository contains the implementation and resources for our research on counterfactual explanations in Explainable AI. Our work introduces a novel Natural Language Generation (NLG) method tailored for generating sentence-level counterfactual explanations. This project is part of the iSee initiative and has been accepted for presentation at ECAI 2023.
+This repository contains the implementation and resources for our research on counterfactual explanations in Explainable AI. Our work introduces a  Natural Language Generation (NLG) method tailored for generating sentence-level counterfactual explanations using Feature Actionability Taxonomy (FAT). This project is part of the iSee initiative and has been accepted for presentation at ECAI 2023.
+
+# Main Contributions
+our main contribution lies in introducing a template-based natural language generation method tailored for sentence-level counterfactual explanations. By integrating a taxonomy with feature attribution weights, we've enabled the selection of NLG templates compatible with explainers like DICE, NICE, and DisCERN.​
 
 📄 Paper: https://rgu-repository.worktribe.com/output/2015280
 🎥 Video Presentation: [Watch on YouTube](https://youtu.be/7Ti2354ohkk)
